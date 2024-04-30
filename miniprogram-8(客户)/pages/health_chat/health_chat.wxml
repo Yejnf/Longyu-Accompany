@@ -1,0 +1,85 @@
+<view class="container">
+  <!-- 顶部 -->
+  <view class="div_top">
+    <!-- 返回 -->
+    <view class="btn">
+      <image src="/images/return.png" bindtap="navigateBack" class="return overlay-image" />
+    </view>
+    <!-- 标题 -->
+    <view class="title">
+      <label class="title_text">
+        健康语伴
+      </label>
+    </view>
+  </view>
+  <!-- 聊天 -->
+  <view class="div_middle">
+    <view class="hint">
+      <view class="hint_text1">
+        欢迎使用AI健康助手
+      </view>
+      <view class="hint_text2">
+        我有什么能帮助您的吗?
+      </view>
+
+      <!--  -->
+      <!-- <view class="radio-inputs">
+        <label class="radio" bindtap="handleRadioChange" data-value="HTML">
+          <input type="hidden" name="radio" value="HTML" />
+          <image src="/images/键盘.png" bindtap="" class="name {{checked === 'HTML' ? 'checked' : ''}}" /> -->
+      <!-- <span class="name {{checked === 'HTML' ? 'checked' : ''}}">HTML</span> -->
+      <!-- </label>
+        <label class="radio" bindtap="handleRadioChange" data-value="React">
+          <input type="hidden" name="radio" value="React" />
+          <span class="name {{checked === 'React' ? 'checked' : ''}}">React</span>
+        </label>
+      </view> -->
+
+
+      <!--  -->
+
+
+
+
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class="div_bottom">
+    <!-- 新对话 -->
+    <view class="new_chat">
+      <image src="/images/AI.png" bindtap="" class="ai_png" />
+      <view class="new_chat_text">
+        新对话
+      </view>
+    </view>
+    <!-- 聊天区域 -->
+    <view class="input_view">
+      <!-- 选择输入模式  -->
+      <view class="select_mode">
+        <label class="radio" bindtap="handleRadioChange" data-value="keyboard">
+          <image src="/images/键盘.png" class="name {{checked === 'keyboard' ? 'checked' : ''}}" />
+        </label>
+        <label class="radio" bindtap="handleRadioChange" data-value="micro">
+          <image src="/images/话筒.png" class="name {{checked === 'micro' ? 'checked' : ''}}" />
+        </label>
+      </view>
+
+
+
+      <!-- 输入框 -->
+      <view class="input_text">
+        <input class="input_text" type="text">
+        <!-- 发送 -->
+        <view class="send_view">
+          <view class="send">
+            发送
+          </view>
+        </view>
+
+        </input>
+      </view>
+
+      
+    </view>
+  </view>
+</view>

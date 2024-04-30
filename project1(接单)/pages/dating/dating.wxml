@@ -1,0 +1,115 @@
+<!--pages/dating/dating.wxml-->
+<view class="top">
+  <text class="orderHome">订单大厅</text>
+</view>
+ <view class="box">
+    <view class="header" class="section" style="display: flex;">
+      <image src="/images/地图.png" style="height: 30px;width: 30px;margin-top: 8px;margin-left: 10px;" >
+      </image>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" class="picker">
+          <text style="margin-top: 10px;" >城市：<text style="color: rgb(245, 244, 244);">{{city}} </text>></text>
+      </picker>
+      
+    </view>
+    <view class="title1" style="padding: 10px;color: rgb(53, 51, 51); font-weight: bolder;font-size: medium; "><text>昵称：</text>{{nickName}}</view>
+</view>
+  
+<!-- 中间订单 -->
+<view class="middle">
+  <view class="order-list">
+    <view class="order-item" wx:for="{{orders}}" wx:for-item="order" wx:key="{{order.order_number}}">
+      <view class="list">
+        <view>
+          <view class="font_adjust">
+            <text class="title_adjust">就诊日期：</text>
+            <text class="order-preview-value">{{order.selectedDate}}</text>
+          </view>   
+          <view class="font_adjust">
+            <text class="title_adjust">就诊时间：</text>
+            <text class="order-preview-value">{{order.selectedTime}}</text>
+          </view>   
+        </view>
+        <view class="font_adjust">
+          <text class="title_adjust">医院名称：</text>
+          <text class="order-preview-value">{{order.selectedHospitalName}}</text>
+        </view>
+        <view class="font_adjust">
+          <text class="title_adjust">服务需求：</text>
+          <text class="order-preview-value">{{order.requirement}}</text>
+        </view>
+        <view class="price" style="border-top:  4rpx solid rgb(219, 209, 209);margin-left: 4%;margin-right: 4%;">
+          <view style="margin-top: 10px;">
+            价格
+            <text style="color: #f8b600;">¥</text>
+            <text class="order-preview-value price_color">{{order.price}}</text>
+          </view>
+          <view type="warn" bindtap="acceptOrder" data-order-number="{{order.orderNumber}}" class="button_all">接单</view>
+        </view>
+      </view>
+    </view>
+      <!-- 当订单列表为空时，显示 "无订单" 消息 -->
+      <view wx:if="{{orders.length === 0}}" class="no-order-message">
+        无订单
+      </view>
+  </view>
+</view>
+
+
+
+<!--  授权头像 -->
+<mp-half-screen-dialog 
+  bindbuttontap="buttontap"
+  show="{{show}}"
+  maskClosable="{{false}}" 
+  title="授权" 
+  closabled="{{false}}"
+  style="text-align:center;"
+>
+  
+<view slot="desc">
+  <view class="user"  style="height:10%">
+    <view class="userInfo" style="display: flex; justify-content: space-between;">
+      <button  open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" style="background-color:transparent" >
+        <image class="avatar" src="{{avatarUrl}}"></image>
+      </button>
+      <input style="font-size: large;text-align: center;margin-top: 16%;" name='nickName' bindinput="getnick" type="nickname" placeholder="输入昵称"/>
+    </view>
+  </view>
+</view>
+
+<view slot="footer" style="margin-top: -28%;">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">姓名</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input bindinput="getreceiveName" class="weui-input" placeholder="请输入姓名"/>
+      </view>
+    </view>    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input  bindinput="getreceivePhoneNumber" class="weui-input" placeholder="请输入手机号"/>
+      </view>
+    </view>    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view  class="weui-label">身份证号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input bindinput="getreceiveIdCard" class="weui-input" placeholder="请输入身份证号"/>
+      </view>
+    </view>    
+  </view>
+  <view class="row-btn">
+    <view class="left-btn" bindtap="closePopup" >拒绝</view>
+    <view class="right-btn" bindtap="submit" >授权</view>
+  </view>
+</view>
+
+
+
+</mp-half-screen-dialog>

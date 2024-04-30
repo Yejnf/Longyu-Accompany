@@ -1,0 +1,108 @@
+
+<!-- 轮播图 -->
+<view>
+    <swiper indicator-dots='true' mode="widthFix" indicator-color='#333' indicator-active-color='#f30' autoplay='true' style="height:250px;">
+      <swiper-item class="banneritem" wx:for="{{bannerUrls}}" wx:key="url">
+      <!-- mode="widthFix" 这个属性是图片高度自适应 -->
+        <image src='{{item.url}}' mode="widthFix" ></image>
+      </swiper-item>
+    </swiper>
+</view>
+<!-- <view class="page-body">
+  <view class="page-section page-section-spacing swiper">
+    <swiper
+      autoplay="{{false}}"
+      interval="{{5000}}"
+      duration="{{2000}}"
+      indicator-dots="{{true}}">    
+      <swiper-item class="adjust-imgae">
+        <view class="image-wrapper">
+          <image src="/images/1.jpg" mode="aspectFit"></image>
+        </view>
+      </swiper-item>
+        <swiper-item class="adjust-imgae">
+          <view class="image-wrapper">
+            <image src="/images/1.jpg" mode="aspectFit"></image>
+          </view>
+        </swiper-item>
+      <swiper-item class="adjust-imgae">
+        <view class="image-wrapper">
+          <image src="/images/1.jpg" mode="aspectFit"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>   -->
+
+
+
+
+
+<view class="container" >
+  <view class="header" class="section" style="display: flex;">
+    <image src="/images/地图.png" style="height: 30px;width: 30px;margin-top: 8px;margin-left: 10px;" >
+    </image>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" class="picker">
+        <text style="margin-top: 10px;" >城市：<text style="color: rgb(245, 244, 244);">{{city}} </text></text>
+        <text style="float: right;">切换></text>
+    </picker>
+  </view>
+</view>
+
+
+<!-- 三个均匀分布跳转按钮 -->
+  <view class="view-container-all">
+  <!-- 一 -->
+    <view>
+      <image class="view-container-left" src="/images/流程.jpg" bindtap="jump2"></image>
+    </view>
+
+    <!-- 二 -->
+    <view class="view-container-right" >
+      <view class="accompany-container" bindtap="jump1">
+        <text>陪诊</text>
+        <image class="accompany" src="/images/陪诊绿.png"></image>
+      </view>
+      <view class="goHospital-container" bindtap="jump3">
+        <text >医院导航</text>
+        <image class="goHospital" src="/images/医院.png"></image>
+      </view>  
+    </view>
+  </view>
+
+<view class="use">
+  <view class="susSl">
+    <image class="image_adjust" src="/images/贴士.jpg" >
+      <text class="textOverLay">{{value}}</text>
+    </image>
+  </view>
+</view>
+<!-- 头像 -->
+<mp-half-screen-dialog 
+  bindbuttontap="buttontap"
+  show="{{show}}"
+  maskClosable="{{false}}" 
+  title="授权" 
+  closabled="{{false}}"
+  style="text-align:center;"
+>
+  
+<view slot="desc">
+  <view class="user"  style="height:10%">
+    <view class="userInfo" style="display: flex; justify-content: space-between;">
+      <button  open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" style="background-color:transparent" >
+        <image class="avatar" src="{{avatarUrl}}"></image>
+      </button>
+      <input style="font-size: large;text-align: center;margin-top: 16%;" name='nickName' bindinput="getnick" type="nickname" placeholder="输入昵称"/>
+    </view>
+  </view>
+</view>
+
+  <view slot="footer">
+    <view class="row-btn">
+      <view class="left-btn" bindtap="closePopup" >拒绝</view>
+      <view class="right-btn" bindtap="submit" >授权</view>
+    </view>
+  </view>
+
+</mp-half-screen-dialog>

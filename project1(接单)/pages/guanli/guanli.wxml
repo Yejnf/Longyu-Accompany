@@ -1,0 +1,56 @@
+<view class="top">
+  <text class="orderHome">订单管理</text>
+</view>
+
+<view class="contentView">
+   <leftSlideGroup id="leftSlideGroup" isLinked="{{true}}" ref="leftSlideGroupRef">
+      <block wx:for="{{orders}}" wx:for-item="order" wx:for-index="i" wx:key="{{order.order_number}}">
+        <leftSlideItem id="leftSlideItem" wx:if="{{showLeftSlideItem}}">
+          <view class="leftView" slot="leftView">
+               <view class="Name">
+                  客户昵称：
+                  <text class="order-preview-value">{{order.nickName}}</text>
+               </view>
+               <view class="other">
+                  医院名称：
+                  <text class="order-preview-value">{{order.selectedHospitalName}}</text>
+               </view>
+               <view class="other">
+                  就诊科室：
+                  <text class="order-preview-value">{{order.department}}</text>
+               </view>
+               <view class="other">
+                  预约日期：
+                  <text class="order-preview-value">{{order.selectedDate}}</text>
+               </view>
+               <view class="other">
+                  预约时间：
+                  <text class="order-preview-value">{{order.selectedTime}}</text>
+               </view>
+               <view class="other">
+                  订单编号：
+                  <text class="order-preview-value">{{order.orderNumber}}</text>
+               </view>
+               <view class="other">
+                  下单时间：
+                  <text class="order-preview-value">{{order.orderTime}}</text>
+               </view>
+               <view class="other">
+                  接单时间：
+                  <text class="order-preview-value">{{order.receiveOrderTime}}</text>
+               </view>
+               <text class="num">{{i + 1}}</text>
+          </view>
+          <view class="rightView" slot="rightView">
+              <view class="updateView" bind:tap="onTapJump" data-index="{{i}}">
+                <text class="btn-submit">详情</text>
+              </view>
+          </view>
+        </leftSlideItem> 
+      </block>
+   </leftSlideGroup>
+   <!-- 当订单列表为空时，显示 "无订单" 消息 -->
+    <view wx:if="{{orders.length === 0}}" class="no-order-message">
+    无订单
+    </view>
+</view>

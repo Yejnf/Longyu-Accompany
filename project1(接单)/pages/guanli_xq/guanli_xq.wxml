@@ -1,0 +1,73 @@
+<!--pages/guanli_xq/guanli_xq.wxml-->
+<view style="background-color: #6989f3;">
+  <image src="/images/return.png" bindtap="navigateBack" class="return overlay-image"/>
+</view>
+
+<view class="head">
+    <view class="left">
+      <!-- <image src="https://www.inquark.com/image/{{orderData.avatarUrl}}" mode="scalToFill"  -->
+        <image src="https://www.inquark.com/{{orderData.avatarUrl}}" mode="scalToFill" 
+        style="width: 120px;height: 120px;margin: 20px;"/>
+    </view>
+    <view class="right">
+        <view class="first">客户姓名：{{orderData.name}}</view>
+        <view>联系方式：{{orderData.phoneNumber}}</view>        
+    </view>
+</view>
+
+<view class="bottom">
+    <view class="bottom_first">
+        医院名称：
+        <text class="order-preview-value">{{orderData.selectedHospitalName}}</text>
+    </view>
+    <view class="bottom_first">
+        就诊诊室：
+        <text class="order-preview-value">{{orderData.department}}</text>
+    </view>
+    <view class="bottom_first">
+        就诊需求：
+        <text class="order-preview-value">{{orderData.requirement}}</text>
+    </view>
+    <view class="bottom_second">
+        预约日期：
+        <text class="order-preview-value">{{orderData.selectedDate}}</text>
+    </view>
+    <view class="bottom_second">
+        预约时间：
+        <text class="order-preview-value">{{orderData.selectedTime}}</text>
+    </view>
+    <view class="bottom_three">
+        订单编号：
+        <text class="order-preview-value">{{orderData.orderNumber}}</text>
+    </view>
+    <view class="bottom_six">
+        接单时间：
+        <text class="order-preview-value">{{orderData.receiveOrderTime}}</text>
+    </view>
+    <view class="circle-btn_layout">
+        <button class="circle-btn" bindtap="cancelOrder" wx:if="{{orderData.receiveStatus === 1}}" style="margin-right: 10px;background-color: #f1f1f1;color: rgb(26, 173, 25);">取消订单</button>
+        <button class="circle-btn" bindtap="deleteOrder" wx:if="{{orderData.receiveStatus === 0}}" style="background-color: rgb(26, 173, 25);color: white;">删除订单</button>
+        <button class="circle-btn" bindtap="finishOrder" wx:if="{{orderData.receiveStatus === 1}}" style="margin-left: 10px;background-color: rgb(26, 173, 25);color: white;">完成订单</button>
+     </view>
+</view>
+
+
+
+<!-- 弹出层 -->
+
+<view class="modal-container {{showModal ? 'show' : 'hide'}}">
+  <view class="modal-content" style="width: 80%;">
+    <view class="modal-header">
+      <text class="modal-title">请向客户获取完成订单编码</text>
+    </view>
+    <view class="modal-body">
+      <!-- 弹出层内容 -->
+      <input placeholder="请输入完成订单编码"  value="{{input}}" bindinput="inputRandom"></input>
+      <view class="line"></view> <!-- 添加装饰线 -->
+    </view>
+    <view class="modal-footer">
+      <button class="modal-button modal-close-button" bindtap="closeModal" style="margin-right: 10px;background-color: #f1f1f1;color: rgb(26, 173, 25);" >关闭</button>
+      <button class="modal-button modal-submit-button" bindtap="submitModal" style="margin-left: 10px;background-color: rgb(26, 173, 25);color: white;">提交</button>
+    </view>
+    </view>
+</view>

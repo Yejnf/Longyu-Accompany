@@ -1,0 +1,295 @@
+/* pages/dating/dating.wxss */
+.button_all{
+  margin-top: 10px;
+  border-radius: 60rpx; 
+  height: 30px;
+  width: 100px;
+  background-color: #fff;
+  margin-left: 10px; 
+  margin-right: 10px; 
+  text-align: center;
+  color: #FFA500;
+  margin-bottom: 10px;
+  line-height: -10px;
+  font-size: large;
+}
+
+.header{
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.section{
+  margin-bottom: 30rpx;
+  /* position: absolute; */
+  margin-left: 0%;
+  /* margin-right: 40%; */
+  /* border: solid rgb(165, 165, 165); */
+  border-radius: 20px;
+  background-color: lightskyblue;
+}
+
+
+/* 选择器容器 */
+.picker {
+  /* background-color: #f4f4f4;
+  border-radius: 5rpx;
+  padding: 10rpx; */
+
+  font-size: large; 
+  color: #333; 
+  font-weight: bolder;
+
+  /* height: 18px; */
+  /* border-radius: 20px; */
+  padding: 10px;
+  /* background-color: #c0c0c0; */
+}
+
+
+.top{
+  background-color: var(--themeColor);
+  height: 70px;
+  text-align: center;
+  padding: 10px;
+}
+
+.orderHome{
+  line-height: 100px;
+  font-size: x-large;
+  font-weight: bolder;
+  color: rgb(240, 240, 240);
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--themeColor);
+    /* color: #fff; 
+    margin-top: 100px;
+    border: solid black;
+     */
+     
+}
+.title1{
+    /* padding-bottom: 20rpx;
+    border: solid black;
+     margin-right: 100px; */
+}
+
+.middle{
+    margin-top: 25rpx;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: space-around;
+}
+.middle .list{
+    border-radius: 10px;
+    box-shadow: 2rpx 2rpx 5rpx #000;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20rpx;
+    background-color: var(--themeColor);
+    margin-bottom: 30px;
+}
+
+.middle .list .first-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.middle .list .price{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+
+
+
+
+
+/* ldy */
+.order-list {
+  background-color: #fff;
+  border-radius: 10rpx;
+  /* padding: 20rpx; */
+  margin-top: 10rpx;
+}
+
+.order-item {
+  margin-bottom: 20rpx;
+}
+
+
+.order-preview {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx; /* 上下左右内边距增加为10rpx */
+  border: 8rpx solid rgb(60, 161, 35); /* 边框加粗 */
+  border-radius: 30rpx; /* 圆润的边框 */
+  position: relative; /* 为按钮的绝对定位做准备 */
+}
+
+.order-preview-label {
+  width: 50%; /* 使标签和数值各占一半宽度 */
+  font-weight: bold;
+}
+
+.order-preview-value {
+  color: rgb(255, 255, 255);
+}
+
+
+
+.no-order-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* 使消息居中显示 */
+  font-size: 18px;
+  color: #999; /* 自定义颜色 */
+  /* 可以添加其他样式，如字体样式、背景颜色等 */
+}
+
+.font_adjust{
+  padding: 5px;
+}
+
+.price_color{
+  color: #f8b600
+  
+}
+
+.title_adjust{
+  font-weight: bold;
+}
+
+/* 头像 */
+
+.user {
+
+  height:50px;
+  
+}
+ .userInfo{
+
+  background-color:rgb(26, 173, 25);
+  margin-bottom: 10px;
+  
+  height:140px;
+ }
+.avatar {
+  margin-top: 20px;
+  border-radius: 50%;
+  margin-left:20px;
+  width: 60px;
+  height: 60px;
+ 
+}
+
+
+.left-btn{
+  background-color: #f1f1f1;
+  color: rgb(26, 173, 25);
+}
+.right-btn{
+  background-color: rgb(26, 173, 25);
+  color: white;
+}
+
+.row-btn view{
+  flex: 1;
+  text-align: center;
+  margin: 20rpx 10%;
+  padding: 12rpx 0;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+}
+
+
+/* 头像 */
+button{
+  margin: 15rpx 0;
+}
+.row-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15rpx;
+  font-size: 32rpx;
+}
+.row-info view{
+  padding: 10rpx 0;
+}
+.row-info view:first-child{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.line{
+  width: 100rpx;
+  height: 1rpx;
+}
+.left-line{
+  background-image: linear-gradient(to left,orange,white);
+}
+.right-line{
+  background-image: linear-gradient(to right,orange,white);
+}
+.row-author{
+  font-size: 24rpx;
+  color: gray;
+}
+.row-btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1rpx dashed #f1f1f1;
+}
+
+.row-btn view{
+  flex: 1;
+  text-align: center;
+  margin: 20rpx 10%;
+  padding: 12rpx 0;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+}
+.left-btn{
+  background-color: #f1f1f1;
+  color: rgb(26, 173, 25);
+}
+.right-btn{
+  background-color: rgb(26, 173, 25);
+  color: white;
+}
+.fixed{
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+}
+
+.user {
+  height:50px;
+}
+ .userInfo{
+  background-color:rgb(26, 173, 25);
+  margin-bottom: 10px;
+  height:140px;
+ }
+.avatar {
+  margin-top: 20px;
+  border-radius: 50%;
+  margin-left:20px;
+  width: 60px;
+  height: 60px;
+}

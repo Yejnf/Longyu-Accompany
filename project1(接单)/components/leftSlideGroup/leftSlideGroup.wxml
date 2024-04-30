@@ -1,0 +1,5 @@
+<!-- leftSlideGroup.wxml -->
+
+<view class="leftSlideGroup" >
+  <slot></slot>
+</view>

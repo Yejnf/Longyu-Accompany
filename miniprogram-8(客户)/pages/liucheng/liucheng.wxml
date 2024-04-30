@@ -1,0 +1,43 @@
+<image src="/images/return.png" bindtap="navigateBack" class="return"/>
+
+<view class="container">
+	<text class="title">服务流程</text>
+</view>
+<view class="wrap">
+	<view class="row1">
+		<view class="one">
+			<text style="font-size: 30px; color:silver;">1</text>
+			<text style="font-weight: bold;">预约申请</text>
+			<text>客户至少提前一天下单，按要求填写信息</text>
+		</view>
+		<view class="two">
+			<text style="font-size: 30px; color:silver;">2</text>
+			<text style="font-weight: bold;">平台派单</text>
+			<text>优质陪诊师接单</text>
+		</view>
+	</view>
+	<view class="row2">
+		<view class="one">
+			<text style="font-size: 30px; color:silver;">3</text>
+			<text style="font-weight: bold;">电话沟通</text>
+			<text>陪诊师通过电话沟通确定具体要求、注意事项等</text>
+		</view>
+		<view class="two">
+			<text style="font-size: 30px; color:silver;">4</text>
+			<text style="font-weight: bold;">提供服务</text>
+			<text>陪诊师在院等候并履约服务</text>
+		</view>
+</view>
+<view class="row3">
+	<view class="one">
+		<text style="font-size: 30px; color:silver;">5</text>
+			<text style="font-weight: bold;">完成服务</text>
+			<text>陪诊师输入客户确认已完成时生成的随机编码才能完成服务</text>
+		</view>
+		<view class="two">
+			<text style="font-size: 30px; color:silver;">6</text>
+			<text style="font-weight: bold;">备忘清单</text>
+			<text>客户自愿存储备忘记录，数据仅允许个人查看</text>
+		</view>
+</view>
+</view>

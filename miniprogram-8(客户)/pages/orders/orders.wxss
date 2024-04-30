@@ -1,0 +1,360 @@
+
+.orderManager{
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    line-height: 100px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: -10px;
+}
+
+
+page{
+  background-color: rgb(245, 245, 245);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between; /* 修改为 space-between 以在两端对齐 */
+  background-color: rgb(255, 255, 255);
+  align-items: center; /* 添加垂直居中对齐 */
+}
+
+.tabs view {
+  flex: 1; /* 将每个标签平均分配可用的空间 */
+  text-align: center; /* 文字居中对齐 */
+  font-weight: bold; /* 字体加粗 */
+}
+
+.active-tab {
+  color: rgb(0, 0, 0); /* 选中标签的字体颜色为蓝色 */
+  font-size: larger;
+  border-bottom: solid #e40606;
+}
+
+.label-value-pair{
+  margin: 20px;
+}
+
+/* order-page.wxss */
+.order-page {
+  padding: 20rpx;
+  background-color: rgb(255, 255, 255);
+  font-weight: lighter;
+}
+
+.order-list {
+  background-color: rgb(245, 245, 245);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-top: 10rpx;
+}
+
+.order-item {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 50rpx;
+  border: 4rpx solid rgb(221, 216, 216); 
+  padding: 5px;
+}
+
+.order-preview {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx; /* 上下左右内边距增加为10rpx */
+  /* border: 3rpx solid rgb(221, 216, 216);  */
+  border-radius: 30rpx; /* 圆润的边框 */
+  position: relative; /* 为按钮的绝对定位做准备 */
+  /* border-bottom: solid #888; */
+
+  
+}
+
+.order-preview-label {
+  width: 50%; /* 使标签和数值各占一半宽度 */
+  font-weight: bold;
+}
+
+.order-preview-value {
+  color: #888;
+}
+.order-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order-details .order-label,
+.order-details .order-value {
+  width: 100%; /* 让详细信息占满宽度 */
+}
+
+.button-container_1 {
+  /* display:flex;
+  justify-content: space-between;
+  margin-top: 20rpx; 
+  width: 80%;
+  margin-left: 10%; 
+  margin-right: 10%;
+  flex:1; */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1rpx dashed #f1f1f1;
+  margin-top: 10px;
+}
+
+.button-container_1 view{
+  flex: 1;
+  text-align: center;
+  margin: 20rpx 10%;
+  padding: 12rpx 0;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+
+}
+.closed_2{
+  background-color: rgb(26, 173, 25);
+  color: white;
+}
+.closed{
+  background-color: #f1f1f1;
+  color: rgb(26, 173, 25);
+}
+
+.submit{
+  background-color: rgb(26, 173, 25);
+  color: white;
+}
+.button-container {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 20rpx; /* 添加顶部间距 */
+  width: 100%;
+  /* margin-left: 10%; 
+  margin-right: 10%;  */
+  border-top: 4rpx solid rgb(194, 194, 194);
+  text-align: center;
+  
+}
+.button_all{
+  margin-top: 10px;
+  border-radius: 60rpx; 
+  height: 24px;
+  width: 100px;
+  font-size: xx-small;
+  border: 4rpx solid rgb(221, 216, 216); 
+  background-color: #fff;
+  margin-left: 10px; 
+  margin-right: 10px; 
+  font-weight: lighter;
+}
+.cancel-button,
+.view-order-button {
+  flex: 0 0 calc(50% - 5px); /* 使按钮占据一半的宽度，减去10px的间距 */
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5rpx;
+  padding: 5rpx 10rpx;
+  margin: 0 5px; /* 左右间距为10px，通过margin实现 */
+}
+
+.view-order-button {
+  background-color: #007bff;
+  
+}
+
+
+
+/* tanchu */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 4rpx solid rgb(194, 194, 194);
+}
+
+.modal-body {
+  /* 样式化弹出层内容 */
+  max-height: 200px; /* 设置内容容器的最大高度，超过这个高度将出现滚动条 */
+  overflow-y: auto; /* 添加垂直滚动条 */
+  white-space: normal; /* 允许文本换行 */
+  overflow-wrap: break-word; /* 词语中断换行 */
+}
+
+.modal-footer {
+  /* display: flex;
+  justify-content: space-between;
+  margin-top: 20px; */
+}
+
+.agree {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.order-label{
+  font-weight: bold;
+}
+
+/* order-page.wxss */
+.no-order-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 使消息居中显示 */
+  font-size: 18px;
+  color: #999; /* 自定义颜色 */
+  /* 可以添加其他样式，如字体样式、背景颜色等 */
+}
+
+
+
+
+/* 图片 */
+.imageList {
+  padding: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+ 
+  /* 弹性布局 */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* 换行 */
+  flex-wrap: wrap;
+ 
+  /* 内容区的实际宽度为 */
+   /* width: calc(100vw - 64rpx); 
+   width: 686rpx;  */
+   
+  /* 添加边框样式 */
+  border: 2px solid rgb(204, 203, 203);
+  border-radius: 5px; /* 设置边框圆角 */
+}
+ 
+/* 照片容器的样式 */
+.imageList .imageItem {
+  margin-bottom: 25rpx;
+  width: 196rpx;
+  height: 196rpx;
+  background: #F7F9FD;
+  border-radius: 8rpx;
+  border: 5rpx dotted #D0D0D0;
+  position: relative;
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  margin: 15px;
+}
+ 
+/* 图片的样式 */
+.imageList .imageItem .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+ 
+/* 删除按钮的样式 */
+.imageList .imageItem .delImage {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background-color: #e40606;
+   color: #ffffff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 22rpx;
+  position: absolute;
+  top: -16rpx;
+  right: -16rpx;
+ 
+  box-sizing: border-box;
+}
+ 
+/* 可以使用背景图 */
+.imageList .addImage::before {
+  display: block;
+  content: "+";
+  width: 100rpx;
+  height: 100rpx;
+  color: #cccccc;
+  /* font-weight: 700; */
+  font-size: 70rpx;
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imggeTitle{
+  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* 备忘文本 */
+.textareaTitle{
+  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+}
+
+textarea {
+  width: 93%; /* 设置文本域宽度为容器宽度 */
+  padding: 10px; /* 设置文本域内边距 */
+  border: 2px solid #ccc; /* 设置文本域边框样式 */
+  border-radius: 5px; /* 设置边框圆角 */
+}
+
+
+
+.startYuyinImage {
+  position: fixed;
+  top: 210rpx;
+  left: 50%;
+  width: 190rpx;
+  height: 240rpx;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20rpx;
+  color: #fff;
+  text-align: center;
+  margin-left: -95rpx;
+}
+ 
+.startYuyinImage cover-image {
+  margin: 30rpx auto;
+  width: 100rpx;
+  height: 100rpx;
+}
+ 
+.startYuyinImage cover-view {
+  margin-top: 25rpx;
+}

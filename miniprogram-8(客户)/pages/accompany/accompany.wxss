@@ -1,0 +1,242 @@
+/* 页面内容样式 */
+.return{
+  width: 30px;
+  height: 30px;
+  margin-left: 10%;
+  margin-top: 12%;
+  z-index: 1; /* 确保它在顶层显示 */
+  /* border: solid rgb(142, 211, 32); */
+}
+
+.centered-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.overlay-image {
+  position: absolute; /* 添加绝对定位 */
+  top: 0; /* 调整上边距以控制位置 */
+  left: 0; /* 调整左边距以控制位置 */
+}
+.container {
+  padding: 20px;
+  
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.option {
+  border: 1px solid rgb(79, 189, 45);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px; /* 添加圆角边框 */
+}
+
+.textarea {
+  border: 1px solid rgb(79, 189, 45);
+  padding: 10px;
+  margin-bottom: 200px;
+  border-radius: 5px; /* 添加圆角边框 */
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  resize: none; /* 防止用户调整文本域大小 */
+}
+
+/* 底部导航栏样式 */
+.bottom-navbar {
+  position: fixed; /* 固定在页面底部 */
+  left: 0;
+  bottom: 0;
+  width: 100%; /* 100%宽度 */
+  display: flex;
+  justify-content: space-between; /* 将按钮推到最右侧 */
+  align-items: center;
+  background-color: #fff;
+  padding: 30px; /* 调整padding以适应内容 */
+  border-top: 1px solid #ccc;
+  z-index: 999; /* 设置一个较高的z-index，确保在最上方显示 */
+}
+
+
+/* 确认订单按钮样式 */
+.confirm-button {
+  background-color: #007aff;
+  color: #fff;
+  width: 80px; /* 自定义按钮宽度 */
+  height: 40px;
+  text-align: center;
+  border-radius: 20px; /* 圆滑边角 */
+  position: fixed; /* 固定在页面上 */
+  bottom: 24rpx; /* 距离底部5rpx */
+  right: 5rpx; /* 距离右边5rpx */
+}
+
+
+/* 样式表 */
+.form {
+  border: 1px solid #ccc; /* 添加1像素的灰色实线边框 */
+  padding: 10px; /* 添加内边距以增加空白间隔 */
+  border-radius: 5px; /* 添加圆角边框 */
+  border: 1px solid rgb(79, 189, 45);
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%; /* 使输入框宽度填满父容器 */
+  border: none; /* 移除默认边框 */
+  outline: none; /* 移除默认的焦点样式 */
+  
+}
+
+.header {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.section{
+  margin-bottom: 50rpx;
+}
+
+/* 选择器容器 */
+.picker {
+  background-color: rgb(185, 185, 185);
+  border-radius: 5rpx;
+  padding: 10rpx;
+  font-weight: bold;
+}
+
+.current_hospital{
+  border: 1px solid #ccc; /* 添加1像素的灰色实线边框 */
+  padding: 10px; /* 添加内边距以增加空白间隔 */
+  border-radius: 5px; /* 添加圆角边框 */
+  border: 1px solid rgb(79, 189, 45);
+
+  margin-bottom: 10px;
+  border-radius: 5px; /* 添加圆角边框 */
+}
+
+
+
+
+.date{
+  border: 1px solid #ccc; /* 添加1像素的灰色实线边框 */
+  padding: 10px; /* 添加内边距以增加空白间隔 */
+  border-radius: 5px; /* 添加圆角边框 */
+  border: 1px solid rgb(79, 189, 45);
+
+  margin-bottom: 10px;
+  border-radius: 5px; /* 添加圆角边框 */
+}
+
+.time{
+  border: 1px solid #ccc; /* 添加1像素的灰色实线边框 */
+  padding: 10px; /* 添加内边距以增加空白间隔 */
+  border-radius: 5px; /* 添加圆角边框 */
+  border: 1px solid rgb(79, 189, 45);
+
+  margin-bottom: 10px;
+  border-radius: 5px; /* 添加圆角边框 */
+}
+
+.agreement-container {
+  display: flex;
+  align-items: center;
+}
+
+.agreement-button{
+  color: #1ea588;
+  position: relative;
+}
+
+.agreement-button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* 调整下划线距离文字的距离 */
+  left: 0;
+  width: 100%;
+  height: 1px; /* 下划线的高度 */
+  background-color: #46f800; /* 下划线的颜色 */
+}
+
+
+/* 弹出层样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 确保弹出层在最上层 */
+  overflow-y: auto; /* 添加垂直滚动条 */
+}
+
+.modal-title{
+  font-weight: bolder;
+  text-align: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 80%; /* 保持内容宽度为100% */
+  height: 60%; /* 保持内容高度为100% */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+  max-height: 400px; /* 设置内容容器的最大高度，超过这个高度将出现滚动条 */
+  overflow-y: auto; /* 添加垂直滚动条 */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* 设置按钮之间的上边距 */
+}
+
+.agree{
+  background-color: #73ec43;
+}
+
+/* 语音 */
+
+.startYuyinImage {
+  position: fixed;
+  top: 210rpx;
+  left: 50%;
+  width: 190rpx;
+  height: 240rpx;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20rpx;
+  color: #fff;
+  text-align: center;
+  margin-left: -95rpx;
+}
+ 
+.startYuyinImage cover-image {
+  margin: 30rpx auto;
+  width: 100rpx;
+  height: 100rpx;
+}
+ 
+.startYuyinImage cover-view {
+  margin-top: 25rpx;
+}

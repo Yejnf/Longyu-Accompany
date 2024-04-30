@@ -1,0 +1,41 @@
+<!-- <view class="custom-navigation"> -->
+  <image src="/images/return.png" bindtap="navigateBack" class="return"/>
+<!-- </view> -->
+<view class="container">
+  <!-- <view class="header" class="section">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        <text>当前城市：{{city}}</text>
+      </view>
+    </picker>
+  </view> -->
+
+  <view class="header" class="section" style="display: flex;">
+    <image src="/images/地图.png" style="height: 30px;width: 30px;margin-top: 8px;margin-left: 10px;" >
+    </image>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" class="picker">
+        <text style="margin-top: 10px;" >城市：<text style="color: rgb(245, 244, 244);">{{city}} </text>></text>
+    </picker>
+  </view>
+
+
+  <text style="font-weight: bold; margin-left: 10rpx;">{{city}}医院汇总</text>
+  <view class="hospitals">
+    <view wx:for="{{hospitals}}" wx:key="name" class="hospital-item">
+      <view class="hospital-icon-wrapper">
+        <image src="{{item.iconPath}}" class="hospital-icon" bindtap="onHospitalTap" data-name="{{item.name}}"></image>
+      </view>
+      <view class="hospital-info">
+        <text bindtap="onHospitalTap" data-name="{{item.name}}">{{item.name}}</text>
+        <text bindtap="onHospitalTap"  data-name="{{item.name}}">{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 在页面的最底部，放在 </view> 后面 -->
+<view class="map-options" wx:if="{{showMapOptions}}">
+  <view class="map-option" bindtap="openBaiduMap">地图</view>
+  <view class="map-option" bindtap="hideMapOptionsDialog">取消</view>
+</view>

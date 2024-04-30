@@ -1,0 +1,266 @@
+/* pages/health_chat/health_chat.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(236, 236, 236);
+  
+}
+
+.div_top {
+  flex: 0.8;
+}
+
+.div_middle {
+  flex: 5;
+  /* background-color: #a11b84; */
+}
+
+.div_bottom {
+  display: flex;
+  flex: 0.6;
+  /* height: 20%; */
+  /* background-color: #68b312; */
+  border-top: 1px solid rgb(172, 170, 170);
+  padding-top: 6px;
+}
+
+/* 页面内容样式 */
+.return{
+  width: 30px;
+  height: 30px;
+  margin-left: 10%;
+  margin-top: 16%;
+  z-index: 1; 
+  /* border: solid rgb(142, 211, 32); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+.overlay-image {
+  position: absolute; /* 添加绝对定位 */
+  top: 0; /* 调整上边距以控制位置 */
+  left: 0; /* 调整左边距以控制位置 */
+}
+
+.btn {
+  display: flex;
+  place-items: center;
+  background: #ffffff;
+  padding: 1.4em;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+	      -6px -6px 10px -1px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: transform 0.5s;
+  position: absolute;
+  top: 24px;
+  left: 20px;
+}
+
+.title {
+  position: relative; 
+  top: 30%;
+  left: 38%;
+}
+
+.title_text {
+  position: relative; 
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.hint {
+  position: relative;
+  text-align: center;
+  top: 40%;
+}
+
+.hint_text1 {
+  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hint_text2 {
+  position: relative;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.new_chat {
+  margin-top: 1%;
+  height: 80%;
+  margin-left: 2%;
+  flex: 2.5;
+  border: none;
+  display: flex;
+  padding: 0.1rem 0.5rem;
+  background-color: #1fcf77;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  transition: all .6s ease;
+}
+
+.ai_png {
+  width: 24px;
+  height: 24px;
+}
+
+.new_chat_text {
+  font-size: 16px;
+}
+
+.input_view {
+  flex: 8;
+  background-color: rgb(236, 236, 236);
+  margin-top: 1%;
+  height: 80%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 0.1rem;
+  display: flex;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 0.5rem;
+}
+
+/* .radio-inputs {
+  background-color: blanchedalmond;
+  flex: 0.3;
+  display: flex;
+  text-align: center;
+} */
+
+
+/* .radio {
+  background-color: brown;
+  flex: 0.1;
+
+  place-items: center;
+  background: #ffffff;
+  padding: 1.4em;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+	      -6px -6px 10px -1px rgba(0,0,0,0.15);
+  transition: transform 0.5s;
+} */
+
+
+
+.name {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(236, 236, 236);
+}
+
+/*  */
+.select_mode {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  /* background-color: rgb(61, 168, 124); */
+  box-sizing: border-box;
+  /* box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06); */
+  /* padding: 0.25rem; */
+  
+}
+
+.select_mode .radio {
+  position: relative;
+  flex: 1;
+  /* flex:   auto; */
+  /* text-align: center; */
+  /* padding: 0.1rem 0.5rem; */
+  /* background-color: chocolate; */
+  display: flex;
+  align-items: center;
+}
+
+.select_mode .radio .name {
+  display: flex;
+  cursor: pointer;
+  /* align-items: center; */
+  /* justify-content: center; */
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1rem 0;
+  transition: all .15s ease-in-out;
+  /* background-color: rgb(210, 30, 99); */
+  /* position: relative; */
+  flex: 1;
+}
+
+.select_mode .radio .name.checked {
+  background-color: rgb(255, 255, 255);
+  font-weight: 600;
+  transition: all .85s ease-in-out;
+  /* padding: 10px; */
+  /* margin: 10px; */
+}
+
+
+
+/*  */
+
+
+.input_text {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem;
+}
+
+.input_text input{
+  /* background-color: darkmagenta; */
+  flex: 1;
+  padding: 0.6rem;
+  /* border-bottom: 1.5px solid rgb(173, 173, 173); */
+  outline: none;
+  position: relative;
+}
+
+.input_text input::after {
+  content: "";
+  display: block;
+  width: 90%; /* 下划线宽度为文本框宽度的90% */
+  height: 1.5px; /* 下划线高度 */
+  background-color: rgb(173, 173, 173); /* 下划线颜色 */
+  position: absolute;
+  bottom: 0;
+  left: 5%; /* 下划线距离文本框左侧的距离，这里假设文本框有5%的内边距 */
+}
+
+
+.send_view {
+  /* background-color: darkmagenta; */
+}
+
+.send {
+  padding: 0.2rem 0.4rem; /* 添加一些内边距 */
+  border-radius: 0.5rem;
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+  background-color: rgb(212, 212, 212);
+  color: black;
+  box-shadow: 6px 6px 6px -1px rgba(0,0,0,0.15),
+	      -6px 0px 10px -1px rgba(0,0,0,0.15);
+}
+
+

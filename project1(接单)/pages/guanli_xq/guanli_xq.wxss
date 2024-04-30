@@ -1,0 +1,151 @@
+/* pages/guanli_xq/guanli_xq.wxss */
+
+
+.return{
+  width: 36px;
+  height: 36px;
+  margin-left: 10%;
+  margin-top: 12%;
+  z-index: 1; /* 确保它在顶层显示 */
+}
+
+.head{
+    background-color: var(--themeColor);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+}
+.head .right{
+    display: flex;
+    flex-direction: column;
+
+}
+.head .right .first{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.bottom{
+    margin: 20px;
+}
+.bottom .bottom_first{
+    margin-bottom: 20px;
+}
+.bottom .bottom_second{
+    margin-bottom:20px;
+}
+.bottom .bottom_three{
+    margin-bottom: 20px;
+}
+.bottom .bottom_four{
+    margin-bottom: 20px;
+}
+.bottom .bottom_five{
+    margin-bottom: 20px;
+}
+.bottom .bottom_six{
+    margin-bottom: 50px;
+}
+
+.bottom .circle-btn{
+    background-color: rgba(255, 0, 0, 0.555);
+    
+}
+
+.circle-btn_layout{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+/* 弹出层 */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-close {
+  color: #999;
+}
+
+.modal-body {
+  margin-top: 10px;
+  position: relative;
+
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-button {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+/* 添加其他页面样式以适应你的需求 */
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc; /* 添加底部边框线 */
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  position: absolute;
+  bottom: 0;
+}
+
+.modal-close-button {
+  background: rgb(204, 204, 204); /* 设置关闭按钮颜色为灰色 */
+  color: #fff;
+}
+
+.modal-submit-button {
+  background: #1fc469; /* 设置提交按钮颜色为绿色 */
+  color: #fff;
+}

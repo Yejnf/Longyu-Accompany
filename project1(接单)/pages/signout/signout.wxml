@@ -1,0 +1,11 @@
+<!--pages/signout/signout.wxml-->
+<!--pages/signout/signout.wxml-->
+<view class="out-wrap">
+	<text style="font-size: 30px; padding-top: 100px;">
+		确定要退出吗？
+	</text>
+	<view class="button-wrap">
+		<button type="primary" class="yes">确定</button>
+		<button bindtap="toSelf" class="no">返回</button>
+	</view>
+</view>

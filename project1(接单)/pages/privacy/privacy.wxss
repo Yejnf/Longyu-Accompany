@@ -1,0 +1,14 @@
+/* pages/privacy/privacy.wxss */
+/* pages/privacy/privacy.wxss */
+.first{
+    margin-bottom: 10px;
+}
+
+
+.return{
+  width: 36px;
+  height: 36px;
+  margin-left: 10%;
+  margin-top: 12%;
+  z-index: 1; /* 确保它在顶层显示 */
+}

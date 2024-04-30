@@ -1,0 +1,178 @@
+<!-- order-page.wxml -->
+
+<view class="top"> 
+  <view class="orderManager">订单管理</view>
+  <view class="order-page">
+  <view class="tabs">
+    <view class="{{currentTab === 'all' ? 'active-tab' : ''}}" bindtap="all">全部</view>
+    <view class="{{currentTab === 'unpaid' ? 'active-tab' : ''}}" bindtap="unpaid">待支付</view>
+    <view class="{{currentTab === 'inService' ? 'active-tab' : ''}}" bindtap="inService">服务中</view>
+    <view class="{{currentTab === 'completed' ? 'active-tab' : ''}}" bindtap="completed">已完成</view>
+    <view class="{{currentTab === 'refund' ? 'active-tab' : ''}}" bindtap="refund">售后</view>
+  </view>
+  <!-- 在这里添加订单列表 -->  
+</view>
+
+<view class="order-list">
+    <view class="order-item" wx:for="{{orders}}" wx:for-item="order" wx:key="{{order.order_number}}">
+      <view class="order-preview">
+        <text class="order-preview-label">就诊医院：</text>
+        <text class="order-preview-value">{{order.selectedHospitalName}}</text>
+        <text class="order-preview-label">就诊科室：</text>
+        <text class="order-preview-value">{{order.department}}</text>
+        <text class="order-preview-label">就诊日期：</text>
+        <text class="order-preview-value">{{order.selectedDate}}</text>
+        <text class="order-preview-label">就诊时间：</text>
+        <text class="order-preview-value">{{order.selectedTime}}</text>
+        <text class="order-preview-label">下单时间：</text>
+        <text class="order-preview-value">{{order.orderTime}}</text>
+        <text class="order-preview-label">订单状态：</text>
+        <text class="order-preview-value">{{order.status}}</text>
+        <!-- <view style="border-bottom: solid rgb(173, 119, 119);">111</view> -->
+        <view class="button-container">
+          <view  class="button_all" bindtap="deleteOrder" data-order="{{order}}" wx:if="{{order.status === '已完成'}}">删除订单</view>
+          <view  class="button_all"  bindtap="cancelOrder" data-order="{{order}}" wx:if="{{order.status === '待支付'}}">取消订单</view>
+          <view  class="button_all" bindtap="goPay" data-order="{{order}}" wx:if="{{order.status === '待支付'}}">付款</view>
+          <view  class="button_all" bindtap="showListModal" data-order="{{order}}" wx:if="{{order.status === '已完成'}}">备忘清单</view>
+          <view class="button_all"  bindtap="entryRefund" data-order="{{order}}" wx:if="{{order.status === '服务中'}}">进入售后</view>
+          <view  class="button_all" bindtap="cancelRefund" data-order="{{order}}" wx:if="{{order.status === '售后'}}">取消售后</view>
+          <view  class="button_all"  bindtap="afterRefund" data-order="{{order}}" wx:if="{{order.status === '售后'}}">确认售后</view>
+          <view  class="button_all"  bindtap="finishOrder" data-order="{{order}}" wx:if="{{order.status === '服务中'}}">完成订单</view>
+          <view  class="button_all" style="border: 4rpx solid #FFA500;color: #FFA500;" bindtap="viewOrder" data-order="{{order}}">订单详情</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 当订单列表为空时，显示 "无订单" 消息 -->
+    <view wx:if="{{orders.length === 0}}" class="no-order-message">
+      无订单
+    </view>
+</view>
+
+<!-- 弹出层 -->
+<view wx:if="{{ showModal }}" class="modal">
+  <view class="modal-content">
+    <view class="modal-title">
+      订单详情
+    </view>
+    <!-- 弹出层内容 -->
+    <view class="modal-body">
+       <!-- 详情内容 -->
+        <view class="label-value-pair">
+          <text class="order-label">姓名：</text>
+          <text class="order-value">{{modalOrder.name}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">身份证：</text>
+          <text class="order-value">{{modalOrder.idCard}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">手机号：</text>
+          <text class="order-value">{{modalOrder.phoneNumber}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">就诊城市：</text>
+          <text class="order-value">{{modalOrder.city}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">就诊医院：</text>
+          <text class="order-value">{{modalOrder.selectedHospitalName}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">就诊科室：</text>
+          <text class="order-value">{{modalOrder.department}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">就诊日期：</text>
+          <text class="order-value">{{modalOrder.selectedDate}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">就诊时间：</text>
+          <text class="order-value">{{modalOrder.selectedTime}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">订单号：</text>
+          <text class="order-value">{{modalOrder.orderNumber}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">下单时间：</text>
+          <text class="order-value">{{modalOrder.orderTime}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">价格：</text>
+          <text class="order-value">{{modalOrder.price}}</text>
+        </view>
+        <view class="label-value-pair">
+          <text class="order-label">服务需求：</text>
+          <text class="order-value">{{modalOrder.requirement}}</text>
+        </view>
+    </view>  
+    <view class="modal-footer">
+        <view class="button-container_1">
+          <view bindtap="hideModal" class="closed_2">关闭</view>
+        </view>
+    </view>  
+  </view>
+</view>      
+
+
+<!-- 弹出层 -->
+<view wx:if="{{ showListModal }}" class="modal">
+  <view class="modal-content">
+    <view class="modal-title">备忘清单</view>
+    <!-- 弹出层内容 -->
+    <view class="modal-body">
+      <!-- 备忘清单内容 -->
+      <!--  文本 -->
+      <view class="textareaTitle">备忘文本：</view>
+      <view>
+        <textarea
+          bindinput="onTextareaInput"
+          maxlength="200"
+          auto-height
+          disabled="{{listSubmitted}}"
+          value="{{textareaValue}}"
+        >
+        
+        
+        
+        <!-- <view bindtap="hideListModal" style="float: right;"wx:if="{{!listSubmitted}}" >🔈</view> -->
+        </textarea>
+        
+      </view>
+
+
+      <view wx:if="{{!listSubmitted}}">
+        <button class="yuyinBtn {{recordState == true ? 'yuyinBtnBg':''}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
+          <text wx:if="{{recordState == false}}">按住 说话</text>
+          <text wx:else>松开 结束</text>
+        </button>
+       </view>
+       <cover-view class="startYuyinImage" wx:if="{{recordState == true}}">
+         <cover-image src="/images/300.jpg"></cover-image>
+        <cover-view>开始语音</cover-view>
+       </cover-view>
+      <!-- 图片 -->
+      <view class="imggeTitle">备忘图片：</view>
+      <view class="imageList">
+        <view class="imageItem" wx:for="{{imageList}}" wx:key="index">
+            <image class="image"  mode="aspectFill" bindtap="chooseImage"  data-type="pictures"  data-index="{{index}}" src="{{item.url}}"  alt="Image" /> 
+            <!-- bindtap="previewImage" -->
+            <view class="delImage" catchtap="delImage" data-idnex="{{index}}" wx:if="{{!listSubmitted}}">-</view>
+        </view>
+        <view class="imageItem addImage" bindtap="chooseImage"  data-type="pictures" wx:if="{{!hideAddImage}}" wx:if="{{!listSubmitted}}"></view>
+        
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="button-container_1">
+        <view bindtap="hideListModal" class="closed">关闭</view>
+        <view bindtap="wordYun" wx:if="{{listSubmitted}}" class="submit">播放</view>
+        <view bindtap="submitList" wx:if="{{!listSubmitted}}" class="submit">提交</view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+
+

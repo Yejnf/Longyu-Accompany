@@ -1,0 +1,16 @@
+/**app.wxss**/
+@import '/weui-wxss-master/dist/style/weui.wxss';
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+/* app.wxss 或 pageName.wxss */
+page{
+  /* 主题颜色 */
+  --themeColor: #6989f3;
+}

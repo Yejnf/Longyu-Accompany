@@ -1,0 +1,31 @@
+<view data-weui-theme="{{theme}}" class="container" >
+  <view class="user">
+    <image class="background" src="/images/blue.jpg"></image>
+    <view class="userInfo overlay">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="self-wrapper" style="border-radius: 20px;">
+ 
+	<view class="function-wrap">
+		<text style="font-size: 25px;" bindtap="orderCount"> 接单数： {{orderCount}}</text>
+		<navigator url="/pages/privacy/privacy" class="privacy">
+			隐私政策
+			<image src="../../images/tab_img.png" mode="aspectFit"/>
+		</navigator>
+		<!-- <navigator url="/pages/signout/signout" class="Sign-out">
+			退出登录
+			<image src="../../images/tab_img.png" mode="aspectFit"/>
+		</navigator> -->
+    <navigator target="miniProgram" open-type="exit"class="Sign-out">
+			退出
+			<image src="../../images/tab_img.png" mode="aspectFit"/>
+		</navigator>
+	</view>
+
+</view>
+<view>  <button type="" class="floatIcon" open-type="contact" style="width: 100px; height: 100px;font-size: 14px;background-image: url('{{imageurl}}/customer_service.png');" ><view style="margin-top: 30px;">客服</view></button></view>

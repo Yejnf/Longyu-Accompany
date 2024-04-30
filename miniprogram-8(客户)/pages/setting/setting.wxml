@@ -1,0 +1,73 @@
+<view data-weui-theme="{{theme}}" class="container">
+  <view class="user">
+    <image class="background" src="/images/blue.jpg"></image>
+    <view class="userInfo overlay">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
+
+
+<mp-cells ext-class="my-cells" title="" class="my-cell">
+
+
+
+  <view class="weui-cells weui-cells_after-title">
+    
+    <!-- 新增功能 -->
+    <button bindtap="health_chat" style="width: 100%;border-top: 2rpx solid black; " class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+     健康语伴
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="margin-left: 250px;">
+      </view>
+    </button>
+    
+    
+    <button open-type="contact" style="width: 100%; background-image: url('{{imageurl}}/customer_service.png');border-bottom: 2rpx solid black;border-top: 2rpx solid black;" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      客服反馈
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="margin-left: 250px;"></view>
+    </button>
+
+    <button bindtap="modal" style="width: 100%;border-bottom: 2rpx solid black; " class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+
+      关于我们
+
+      <view class="weui-cell__ft weui-cell__ft_in-access" style="margin-left: 250px;"></view>
+
+    </button>
+  </view>
+
+</mp-cells>
+<view class="use">
+  <view class="susSl" bindtap="navigateToNewPage">
+    <image class="image_adjust" src="/images/申请.jpg">
+    </image>
+  </view>
+</view>
+
+<!-- <view  bindtap="modal" class="modal" wx:if="{{modalName}}" catchtouchmove="{{catchtouchmove?true:return}}">
+  <view style="height: 400px;font-size: 20px;">
+    李荣辉dd
+  </view>
+</view> -->
+
+<view bindtap="modal" class="modal" wx:if="{{modalName}}" catchtouchmove="{{catchtouchmove?true:return}}">
+  <view class="modal-content" style="height: 60%;">
+    <view class="modal-title">关于我们</view>
+    <!-- 弹出层内容 -->
+    <view class="modal-body">
+      <!-- 这里可以添加你的服务协议内容 -->
+      <text>
+        产品介绍：
+        龙誉陪诊，是由三明学院学生团队自主研发的陪诊助医服务平台，我们依托微信小程序虚拟平台，不断完善平台功能，致力于为每一位患者提供最好的服务。
+
+        主营业务：
+        专业陪诊，一站式陪诊就医服务，诊前约号，代办买药，代收/送结果、诊后药物查询等服务。服务好每一位患者，解决就医难等问题，大家的健康就是我们最大的心愿。
+
+        服务理念：
+        优质高效，专业专注，服务大众。
+      </text>
+    </view>
+
+  </view>
+</view>

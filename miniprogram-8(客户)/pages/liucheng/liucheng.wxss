@@ -1,0 +1,73 @@
+/* pages/process/process.wxss */
+Page{
+  background-image: url('https://www.inquark.com/image/background_1.png');
+}
+
+.return{
+  width: 20px;
+  height: 20px;
+  margin-top: 14%;
+  margin-left: 7%;
+}
+
+.container{
+  /* margin-top: 20%; */
+  border-bottom: 2rpx solid black;
+  margin-bottom: 20px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.title {
+  margin-left: 30%;
+  margin-right: 30%;
+	font-weight: normal;
+	font-size: 30px;
+	color:rgb(52, 204, 171);
+  display: flex;
+}
+
+.wrap {
+	
+	display: flex;
+	flex-direction: column;
+}
+.row1 {
+	flex-direction: row;
+	display: flex;
+	width: 100%;
+	height: 150px;
+}
+.row2 {
+	margin-top: 10px;
+	flex-direction: row;
+	display: flex;
+	width: 100%;
+	height: 150px;
+}
+.row3 {
+	margin-top: 10px;
+	flex-direction: row;
+	display: flex;
+	width: 100%;
+	height: 150px;
+}
+
+.one {
+	background-color: rgb(148, 240, 224);
+	border-radius: 20%;
+	margin-left: 8%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 40%;
+}
+.two {
+	background-color: rgb(148, 240, 224);
+	border-radius: 20%;
+	margin-left: 4%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 40%;
+}
